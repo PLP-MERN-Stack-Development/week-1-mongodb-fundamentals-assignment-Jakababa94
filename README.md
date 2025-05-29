@@ -1,47 +1,103 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19646809&assignment_repo_type=AssignmentRepo)
 # MongoDB Fundamentals Assignment
 
-This assignment focuses on learning MongoDB fundamentals including setup, CRUD operations, advanced queries, aggregation pipelines, and indexing.
+This project demonstrates basic and advanced MongoDB operations using Node.js. It includes scripts to populate a sample bookstore database and perform a variety of queries, aggregations, and indexing operations.
 
-## Assignment Overview
+## Table of Contents
 
-You will:
-1. Set up a MongoDB database
-2. Perform basic CRUD operations
-3. Write advanced queries with filtering, projection, and sorting
-4. Create aggregation pipelines for data analysis
-5. Implement indexing for performance optimization
+- [Project Structure](#project-structure)
+- [Requirements](#requirements)
+- [Setup Instructions](#setup-instructions)
+- [Scripts Overview](#scripts-overview)
+  - [insert_books.js](#insert_booksjs)
+  - [queries.js](#queriesjs)
+- [Sample Data](#sample-data)
+- [Example Queries](#example-queries)
+- [Aggregation Pipelines](#aggregation-pipelines)
+- [Indexing](#indexing)
+- [Screenshots](#screenshots)
+- [License](#license)
 
-## Getting Started
+---
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
+## Project Structure
 
-## Files Included
-
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
+```
+insert_books.js         # Script to insert sample book data into MongoDB
+queries.js              # MongoDB queries, aggregations, and indexing examples
+README.md               # Project documentation
+Week1-Assignment.md     # Assignment instructions
+.github/                # GitHub classroom and workflow configs
+screenshot/             # Screenshots for the assignment
+```
 
 ## Requirements
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+- [Node.js](https://nodejs.org/) (v12+ recommended)
+- [MongoDB](https://www.mongodb.com/) (local instance or Atlas cluster)
+- npm (Node package manager)
 
-## Submission
+## Setup Instructions
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+1. **Clone the repository**  
+   Download or clone this repository to your local machine.
 
-1. Complete all tasks in the assignment
-2. Add your `queries.js` file with all required MongoDB queries
-3. Include a screenshot of your MongoDB database
-4. Update the README.md with your specific setup instructions
+2. **Install dependencies**  
+   Only the `mongodb` package is required:
+   ```sh
+   npm install mongodb
+   ```
 
-## Resources
+3. **Start MongoDB**  
+   Ensure your MongoDB server is running locally on `mongodb://localhost:27017` or update the URI in [`insert_books.js`](insert_books.js).
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+4. **Insert Sample Data**  
+   Run the following command to populate the database:
+   ```sh
+   node insert_books.js
+   ```
+   You should see output confirming the insertion of books.
+
+5. **Run Queries**  
+   Open queries.js and execute the queries in the MongoDB shell or use them as examples in your application.
+
+## Scripts Overview
+
+### insert_books.js
+
+- Connects to MongoDB.
+- Drops the existing `books` collection if it exists.
+- Inserts a set of sample book documents into the `plp_bookstore.books` collection.
+- Prints the inserted books.
+
+### queries.js
+
+Contains a variety of MongoDB operations, including:
+
+- Basic find queries (by genre, author, year, etc.)
+- Updates and deletes
+- Advanced queries using projections, sorting, pagination
+- Aggregation pipelines (grouping, averaging, counting)
+- Index creation and usage with `explain()`
+
+## Sample Data
+
+The sample data includes classic books with fields such as:
+- `title`
+- `author`
+- `genre`
+- `published_year`
+- `price`
+- `in_stock`
+- `pages`
+- `publisher`
+
+See insert_books.js for the full dataset.
+
+## Screenshots
+
+Screenshots related to the assignment can be found in the screenshot directory.
+
+## License
+
+This project is for educational purposes as part of the MongoDB Fundamentals assignment.
+```
