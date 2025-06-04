@@ -39,7 +39,10 @@ screenshot/             # Screenshots for the assignment
 ## Setup Instructions
 
 1. **Clone the repository**  
-   Download or clone this repository to your local machine.
+   ```sh
+   git clone https://github.com/PLP-MERN-Stack-Development/week-1-mongodb-fundamentals-assignment-Jakababa94.git
+   ```
+   cd week-1-mongodb-fundamentals-assignment-Jakababa94
 
 2. **Install dependencies**  
    Only the `mongodb` package is required:

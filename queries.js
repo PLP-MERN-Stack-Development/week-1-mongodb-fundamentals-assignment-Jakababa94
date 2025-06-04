@@ -21,8 +21,7 @@ db.books.deleteOne({ title: "The Alchemist" });
 db.books.find({ in_stock: true, published_year: { $gt: 2010 } });
 
 /* Projection to return only the title, author, and price fields  */
-db.books.find(
-  { in_stock: true, published_year: { $gt: 2010 } },
+db.books.find({},
   { title: 1, author: 1, price: 1, _id: 0 }
 );
 
